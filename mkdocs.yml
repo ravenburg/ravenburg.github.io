@@ -1,0 +1,74 @@
+# Project information
+site_name: Reverse Roleplay -  wet en regelgeving
+site_url: 'http://localhost:8000/'
+site_description: 'Wet en regelgeving van Reverse Roleplay'
+site_author: 'Pino Pistool'
+time_zone: 'Europe/Amsterdam'
+
+# Copyright
+copyright: Copyright &copy; 2024 - 2025 Pino
+
+repo_url: 'https://github.com/Pino-Pistool/ReverseAPV/'
+repo_name: 'Pino-Pistool/wet-en-regelgeving'
+edit_uri: 'edit/pre-release/docs/'
+
+# Congiguration
+theme:
+  name: material
+#   features:
+#     - navigation.tabs
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to system preference
+  favicon: img/logoreverse.webp
+  logo: img/logoreverse.png
+  language: nl
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.indexes
+    - header.autohide
+    - toc.follow
+    - content.action.edit
+    - content.action.view
+  extra:
+    analytics:
+      provider: google
+      property: UA-167800475-3
+
+plugins:
+  - git-revision-date-localized:
+      type: timeago
+      time_zone: Europe/Amsterdam
+      locale: nl
+      fallback_to_build_date: false
+  - search:
+      lang: nl
+markdown_extensions:
+  - admonition
+  - attr_list
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js
+  - javascripts/tables.js
+nav:
+  - Home: index.md
+  - Algemene Plaatselijke Verordening: apv.md
+  - Wetboek: wetboek.md
+  - Risicogebieden: risico-gebieden.md
+  - Douanegebieden: douanegebieden.md
+  - NOTAM: notam.md
+  - Streamen op Reverse: streamen.md
+  - Kosten:
+    - Advocatuur: kosten/advocatuur.md
+    - Ambulance: kosten/ambulance.md
+    - ANWB: kosten/anwb.md
+    - Politie: kosten/politie.md
+    - Vliegschool: kosten/vliegschool.md

@@ -1,0 +1,26 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1043{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang19 name: ci \par
+on:\par
+  push:\par
+    branches:\par
+      - master \par
+      - main\par
+permissions:\par
+  contents: write\par
+jobs:\par
+  deploy:\par
+    runs-on: ubuntu-latest\par
+    steps:\par
+      - uses: actions/checkout@v3\par
+      - uses: actions/setup-python@v4\par
+        with:\par
+          python-version: 3.x\par
+      - uses: actions/cache@v2\par
+        with:\par
+          key: $\{\{ github.ref \}\}\par
+          path: .cache\par
+      - run: pip install mkdocs-material\par
+      - run: pip install pillow cairosvg\par
+      - run: mkdocs gh-deploy --force\par
+}
